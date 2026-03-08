@@ -1,6 +1,6 @@
 # FreeAI Agent
 
-A lightweight internet-grounded AI assistant API that:
+A lightweight internet-grounded AI assistant API + website that:
 
 - answers questions using multiple web sources,
 - retains past Q&A per session,
@@ -17,7 +17,20 @@ pip install -e .
 uvicorn freeai_agent.app:app --reload
 ```
 
-Open `http://127.0.0.1:8000/docs` for Swagger UI.
+Then open:
+
+- Website UI: `http://127.0.0.1:8000/`
+- API docs: `http://127.0.0.1:8000/docs`
+
+## How to turn it into a site
+
+You already can: the app now serves a built-in web chat page from `/`.
+
+1. Run the server (`uvicorn freeai_agent.app:app --reload`).
+2. Open `http://127.0.0.1:8000/`.
+3. Enter a `session_id` and ask a question.
+4. Ask follow-ups with the same `session_id` to reuse memory.
+5. Use **Revise Last Answer** to modify output based on feedback.
 
 ## API
 
